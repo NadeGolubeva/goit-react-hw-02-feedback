@@ -35,16 +35,18 @@ export class App extends Component {
         <Feedback options={Object.keys(this.state)}
           onUpdateFeedback={this.updateState} >
         </Feedback>
+        {this.totalAmount() === 0 ? (
+          <p > There is no feedback yet...</p>
+        ) : (
+          <Statistics
+            options={Object.keys(this.state)}
+            stat={this.state}
+            amount={this.totalAmount()}
+            positiveFeedback={this.positivePercentageCount}
 
-        <Statistics
-          options={Object.keys(this.state)}
-          stat={this.state}
-          amount={this.totalAmount()}
-          positiveFeedback={this.positivePercentageCount}
-
-        >
+          >
           
-       </Statistics>
+          </Statistics>)}
       </div>
     );
    
