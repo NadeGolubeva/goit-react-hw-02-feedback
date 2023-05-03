@@ -18,7 +18,7 @@ export const Statistics = ({ options, statistic, amount, positiveFeedback}) => {
                 { amount}
             </Point> 
             <Point> Positive feedback: 
-                {positiveFeedback()}</Point>           
+                {positiveFeedback()}%</Point>           
         </Container>
 
     )
