@@ -4,7 +4,7 @@ export const Feedback = ({options, onUpdateFeedback }) => {
     
   return (
     <Container>
-      <h1> Please leave feedback </h1>
+  
        <div className="Counter__controls">
    
         {options.map((name, i) => {

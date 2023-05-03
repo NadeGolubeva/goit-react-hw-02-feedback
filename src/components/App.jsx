@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Feedback } from './Feedback/Feedback.jsx';
 import { Statistics } from './Statistics/Statistics.jsx';
+import { Section } from './Section/Section.jsx';
 export class App extends Component {
   state = {
     good: 0,
@@ -32,21 +33,32 @@ export class App extends Component {
 
     return (
       <div   >
+        <Section title="Please Leave feedback">
         <Feedback options={Object.keys(this.state)}
           onUpdateFeedback={this.updateState} >
-        </Feedback>
+          </Feedback>
+          </Section>
         {this.totalAmount() === 0 ? (
-          <p > There is no feedback yet...</p>
+          <p
+          style={{
+          paddingLeft: 60,
+            }}>
+            There is no feedback yet...
+          </p>
         ) : (
+            <Section title="Statistics">
           <Statistics
             options={Object.keys(this.state)}
-            stat={this.state}
+            statistic={this.state}
             amount={this.totalAmount()}
             positiveFeedback={this.positivePercentageCount}
 
           >
           
-          </Statistics>)}
+          </Statistics>
+            </Section>
+          )}
+        
       </div>
     );
    

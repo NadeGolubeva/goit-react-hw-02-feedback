@@ -1,15 +1,15 @@
 
 import PropTypes from 'prop-types';
 import {Container, Point} from './Statistics.styled'
-export const Statistics = ({ options, stat, amount, positiveFeedback}) => {
+export const Statistics = ({ options, statistic, amount, positiveFeedback}) => {
     return (
         <Container>
-             <h2>Statistics</h2>
+             
             {options.map((name, i) => { 
                 return (
                     <Point key={i}>
                         {name} : 
-                        <span>{stat[name]}</span>
+                        <span>{statistic[name]}</span>
                     </Point>
                 )}
             )}
@@ -27,7 +27,7 @@ export const Statistics = ({ options, stat, amount, positiveFeedback}) => {
 Statistics.propTypes = {
   options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad'])) //масив, що містить назви елементів статистики
     .isRequired,
-  stat: PropTypes.shape({
+  statistic: PropTypes.shape({
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
